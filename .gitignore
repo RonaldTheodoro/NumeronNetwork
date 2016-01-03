@@ -1,4 +1,5 @@
 *.db
+!DBopcao.db
 .virtual/
 .git/
 __pycache__/
