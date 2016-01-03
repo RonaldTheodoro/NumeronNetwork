@@ -9,6 +9,7 @@ class DB(object):
     """
 
     def __init__(self, nameDB):
+        nameDB = os.getcwd() + '/db/' + nameDB
         try:
             self.conn = sqlite3.connect(nameDB)
             self.cursor = self.conn.cursor()
