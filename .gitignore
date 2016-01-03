@@ -1,0 +1,4 @@
+*.db
+.virtual/
+.git/
+__pycache__/
