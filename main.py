@@ -1,10 +1,33 @@
+import os
+import sys
 from db import QueryDB
 
 
-DB = QueryDB()
+def clear():
+    if sys.platform == 'linux':
+        os.system('clear')
+    else:
+        os.system('cls')
 
-DB.SearchCodLojaDB('88')
-print(DB.ShowLastQuery('one'))
 
-DB.SearchSupDB('JOAO')
-print(DB.ShowLastQuery('all'))
+def version():
+    ver = '1.5 nome a definir'
+    print('Numeron Network {}\n'.format(ver))
+
+
+def get_codloja():
+    codloja = input(
+        'Digite o codloja da loja ou 00 para sair(? configuração): ').upper()
+    if codloja == '00':
+        sys.exit(0)
+    elif codloja == '?':
+        input('configuração')
+    return codloja
+
+
+if __name__ == '__main__':
+    while True:
+        clear()
+        version()
+        get_codloja()
+

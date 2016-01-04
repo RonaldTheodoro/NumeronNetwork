@@ -68,3 +68,7 @@ class QueryDB(object):
         # Retorna uma lista de tuplas com os dados de varias lojas
         elif typequery == 'all':
             return self.DB.FetchAllDB()
+
+    # Salva as alterações no DB
+    def CommitLastQuery(self):
+        DB.CommitDB()
