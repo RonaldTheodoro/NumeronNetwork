@@ -34,7 +34,7 @@ def show_info(dicloja):
             dicloja['grife'],
             dicloja['supervisor']
     ))
-    print('Municipio: {} UF: {}'.format())
+    print('Municipio: {} UF: {}'.format(dicloja['cidade'], dicloja['uf']))
 
 
 def options():
@@ -52,9 +52,29 @@ def options():
 
 
 def menu(dicloja):
+    ping = TPing()
     while True:
         clean()
         show_info(dicloja)
-        options()
-        input()
-        break
+        op = options()
+
+        if op == '0':
+            break
+        elif op == '1':
+            ping.TestPing(dicloja['ip1'])
+        elif op == '2':
+            ping.TestPing(dicloja['ip2'])
+        elif op == '3':
+            ping.TestPing(dicloja['roteador'])
+            if dicloja['sonicwall'] != 'NULL':
+                ping.TestPing(dicloja['sonicwall'])
+        elif op == '4':
+            pass
+        elif op == '5':
+            pass
+        elif op == '6':
+            pass
+        elif op == '7':
+            pass
+        else:
+            input('Opção invalida')
