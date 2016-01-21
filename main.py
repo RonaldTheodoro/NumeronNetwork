@@ -1,15 +1,6 @@
-import os
-import sys
+from menu import menu
+from menu import clean
 from DB.DB import DBsqlite
-from TPing.TPing import TPing
-from VNC.VNC import VNC
-
-
-def clean():
-    if sys.platform == 'win32':
-        os.system('cls')
-    else:
-        os.system('clean')
 
 
 def create_dict(infloja):
@@ -67,5 +58,4 @@ if __name__ == '__main__':
         else:
             dictloja = search_store(codloja)
 
-            test_ping(dictloja['ip1'])
-            vnc_access(dictloja['ip1'])
+            menu(dictloja)
