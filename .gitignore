@@ -1,5 +1,7 @@
 *.db
 !DBopcao.db
+*.exe
 .virtual/
 .git/
 __pycache__/
+UltraVNC/
